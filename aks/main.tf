@@ -14,6 +14,12 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
   identity { type = "SystemAssigned" }
 
+  network_profile {
+    network_plugin     = "azure"
+    service_cidr       = "172.16.0.0/16" # Non-overlapping range
+    dns_service_ip     = "172.16.0.10"   # Must be within service_cidr
+  }
+
   # Senior Features: KEDA & Blob Driver
   workload_autoscaler_profile { keda_enabled = true }
   storage_profile { blob_driver_enabled = true }
