@@ -10,7 +10,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
     node_count     = 1
     vm_size        = "Standard_B2s_v2"
     vnet_subnet_id = var.subnet_id
-    zones          = ["1", "2", "3"]
   }
 
   identity { type = "SystemAssigned" }
