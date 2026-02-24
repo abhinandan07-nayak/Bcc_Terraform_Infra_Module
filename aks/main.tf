@@ -6,10 +6,11 @@ resource "azurerm_kubernetes_cluster" "aks" {
   sku_tier            = "Free" # Trial friendly
 
   default_node_pool {
-    name       = "system"
-    node_count = 1
-    vm_size    = "Standard_B2s"
+    name           = "system"
+    node_count     = 1
+    vm_size        = "Standard_B2s_v2"
     vnet_subnet_id = var.subnet_id
+    zones          = ["1", "2", "3"]
   }
 
   identity { type = "SystemAssigned" }
