@@ -10,8 +10,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
     node_count     = var.node_count
     vm_size        = var.vm_size
     vnet_subnet_id = var.subnet_id
-    # Zones 1, 2, and 3 are supported in South India for High Availability
-    zones          = ["1", "2", "3"]
   }
 
   # Uses SystemAssigned for simplicity in POC
