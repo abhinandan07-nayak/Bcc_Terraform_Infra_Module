@@ -1,19 +1,27 @@
 variable "cluster_name" {
   type        = string
-  description = "Name of the AKS cluster"
+  description = "The name of the AKS cluster"
 }
 
 variable "location" {
   type        = string
-  description = "Azure region (e.g., southindia)"
 }
 
 variable "rg_name" {
   type        = string
-  description = "Resource group name"
 }
 
 variable "subnet_id" {
   type        = string
-  description = "The ID of the subnet where AKS nodes will live"
+  description = "The Subnet ID where the AKS nodes should be placed"
+}
+
+variable "vm_size" {
+  type        = string
+  default     = "Standard_B2s_v2" # Updated for South India compatibility
+}
+
+variable "node_count" {
+  type    = number
+  default = 1
 }
