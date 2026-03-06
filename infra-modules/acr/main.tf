@@ -7,6 +7,6 @@ resource "azurerm_container_registry" "acr" {
 
   tags = {
     Environment = "Dev"
-    Project     = "Technophile"
+    Project     = "Client Infra Live"
   }
 }
